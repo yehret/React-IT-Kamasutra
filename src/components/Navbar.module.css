@@ -1,0 +1,16 @@
+.nav {
+  grid-area: nav;
+
+  background-color: #e2b85d;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.item{
+  color: ;
+}

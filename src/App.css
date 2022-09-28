@@ -10,40 +10,11 @@
 
   max-width: 1200px;
   margin: 0 auto;
+
+  font-family: Roboto, sans-serif;
 }
 
-.header {
-  grid-area: header;
 
-  background-color: #995e1f ;
-}
 
-.header img {
-  height: 50px;
-  width: 60px;
-}
 
-.nav {
-  grid-area: nav;
 
-  background-color: #e2b85d;
-}
-
-.content {
-  grid-area: con;
-
-  background-color: #ec9703;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #000;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-.profile-back img {
-  min-width: 100%;
-  object-fit:cover;
-  max-height: 200px;
-}
