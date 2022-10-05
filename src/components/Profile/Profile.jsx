@@ -3,7 +3,7 @@ import p from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className={p.content}>
+    <div>
       <div className={p.profilebg}>
         <img
           src="https://www.feit.com/wp-content/uploads/2017/03/old-new.jpg"

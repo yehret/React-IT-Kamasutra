@@ -1,9 +1,9 @@
 .app-wrapper {
   display: grid;
 
-  grid-template-areas: 
-  "header header header"
-  "nav con con";
+  grid-template-areas:
+    "header header header"
+    "nav con con";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
@@ -15,6 +15,8 @@
 }
 
 
+.app-wrapper-content {
+  grid-area: con;
 
-
-
+  /* background-color: #ec9703; */
+}
