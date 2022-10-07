@@ -6,13 +6,12 @@
 
 .nav a {
   text-decoration: none;
-  color: #000;
+
   padding-left: 10px;
-  padding-top: 10px;
 }
 
 .item {
-  color: ;
+  color: #000;;
 }
 
 .active {
@@ -23,3 +22,8 @@
   color: #fff;
   transition: 0.2s ease;
 }
+
+.active {
+  color: gold;
+}
+
