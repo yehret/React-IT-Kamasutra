@@ -1,6 +1,6 @@
 body{
   background-color: #efe9e2;
-  font-family: Roboto, sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 .app-wrapper {
@@ -23,6 +23,6 @@ body{
 
 .app-wrapper-content {
   grid-area: con;
-
+  
   /* background-color: #ec9703; */
 }
