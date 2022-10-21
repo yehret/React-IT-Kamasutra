@@ -1,23 +1,19 @@
-.dialogs {
-    display: grid;
-
-    grid-template-columns: 2fr 10fr;
-}
-
-.dialogsItems {
-    padding: 10px;
+.dialog{
+    padding-bottom: 5px;
 }
 
 .dialog a{
     text-decoration: none;
     color: #000;
+    transition: 0.2s ease;
+    font-weight: 600;
 }
 
-.dialog.active {
-    color: gold;
+.dialog a:hover{
+    color: #ff4444;
+    transition: 0.2s ease;
 }
 
-
-.message {
-    padding: 10px;
+.dialog .active {
+    color: #ff4444;
 }
