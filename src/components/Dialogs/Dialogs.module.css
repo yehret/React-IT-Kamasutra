@@ -11,3 +11,16 @@
 .dialogs{
     
 }
+
+.send_message{
+
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+.send_message button {
+    margin-top: 10px;
+    align-self: center;
+    width: 100px;
+}

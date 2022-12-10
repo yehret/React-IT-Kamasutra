@@ -23,7 +23,7 @@ const App = (props) => {
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<Profile to="/profile" replace />} />
+            {/* <Route path="*" element={<Profile to="/profile" replace />} /> */}
           </Routes>
 
         </div>

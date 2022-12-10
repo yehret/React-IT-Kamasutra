@@ -7,7 +7,7 @@ let state = {
             {id: 3, message: "Psh-psh-psh", likeCount: 23},
             {id: 4, message: "Yo", likeCount: 7},
             {id: 5, message: "Im cool, man", likeCount: 2},
-           ],
+           ]
     },
 
     dialogsPage: {

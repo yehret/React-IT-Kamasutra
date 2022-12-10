@@ -1,13 +1,19 @@
 import s from './Dialogs.module.css'
+import React from 'react';
 
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-
     let dialogsElements = props.dialogs.map(el => <DialogItem id={el.id} name={el.name} />)
     let messagesElements = props.messages.map(el => <Message id={el.id} message={el.message}/>)
 
+    let newMessage = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessage.current.value
+        alert(text)
+    }
     return(
         <div className={s.dialogsWrapper}>
             <div className={s.dialogs}>
@@ -16,8 +22,13 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
-
+                <div className={s.send_message}>
+                <textarea ref={newMessage}></textarea>
+                <button onClick={addMessage}>Send</button>
+                </div>
             </div>
+
+            
         </div>
     );
 }
