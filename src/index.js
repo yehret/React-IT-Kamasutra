@@ -1,17 +1,39 @@
+import reportWebVitals from './reportWebVitals';
+import state, { subscribe } from './redux/state';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
+
+import { addPost, updateNewPostText } from './redux/state';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App posts={state.profilePage.posts} dialogs={state.dialogsPage.dialogs} messages={state.dialogsPage.messages}/>
-  </React.StrictMode>
-);
+
+ let rerenderEntireTree = (state) => {
+  root.render(
+    <React.StrictMode>
+      <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>
+    </React.StrictMode>
+  );
+}
+
+rerenderEntireTree(state)
+
+subscribe(rerenderEntireTree);
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// let rerenderEntireTree = () => {
+//   root.render(
+//     <React.StrictMode>
+//       <App state={state} addPost={addPost}/>
+//     </React.StrictMode>
+//   );
+// }
+
+rerenderEntireTree(state);
 
 
 /* <App posts={posts} dialogs={dialogs} messages={messages}/> */
