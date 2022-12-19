@@ -13,15 +13,16 @@ const MyPosts = (props) => {
   let postsElements = props.posts.map(el => <Post id={el.id} message={el.message}  likeCount={el.likeCount} />)
 
   let addPost = () => {
-    // let text = newPostElement.current.value
-    props.addPost()
-    // props.updateNewPostText('')
+    // props.addPost()
+    props.dispatch({ type: 'ADD-POST' })
 }
 
   let newPostElement = React.createRef()
 
   let onPostChange = () => {
-    props.updateNewPostText(newPostElement.current.value)
+    let text = newPostElement.current.value
+    // props.updateNewPostText(text)
+    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
   }
 
   return (
@@ -37,8 +38,6 @@ const MyPosts = (props) => {
       </div>
       <div className={p.posts}>
         {postsElements}
-
-        {/* <Post message={postsData[1].message}  likeCount={postsData[1].likeCount} /> */}
       </div>
     </div>
   );
