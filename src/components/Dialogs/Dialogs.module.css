@@ -1,26 +1,53 @@
 .dialogsWrapper {
     display: grid;
-
+    max-height: 800px;
     grid-template-columns: 2fr 10fr;
 }
 
 .messages {
-
+    border-left: 2px black solid;
+    height: 500px;
+    position: relative;
+    padding-left: 20px;
 }
 
 .dialogs{
-    
+
 }
 
 .send_message{
-
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    width: 300px;
+    position: absolute;
+    bottom: 0px;
 }
 
 .send_message button {
     margin-top: 10px;
-    align-self: center;
+    /* align-self: center; */
     width: 100px;
+    margin-left: auto;
+    height: 30px;
+
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.send_message textarea {
+    height: 50px;
+    resize: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.send_message textarea:focus {
+    outline: none !important;
+    border-color: #cbcbcb;
+    box-shadow: 0 0 10px #dddddd;
 }
