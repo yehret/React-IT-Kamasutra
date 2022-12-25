@@ -4,8 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-import store from './redux/state';
+import store from './redux/reduxStore';
+// import StoreContext from './storeContext';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,14 +16,23 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
-      <App state={store.getState()} dispatch={store.dispatch.bind(store)} /*addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}*//>
+      <BrowserRouter>
+        <Provider store = { store }>
+          <App /*store={store} dispatch={store.dispatch.bind(store)}*/ /*addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}*//>
+        </Provider>
+      </BrowserRouter>
     </React.StrictMode>
   );
 }
 
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
-store.subscribe(rerenderEntireTree);
+// rerenderEntireTree(store.getState());
+
+// store.subscribe(() => {
+//   let state = store.getState()
+//   rerenderEntireTree(state);
+// });
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
