@@ -1,6 +1,7 @@
 .nav {
   grid-area: nav;
   background-color: #ff4444 ;
+  max-height: 700px;
 }
 
 .nav a {
