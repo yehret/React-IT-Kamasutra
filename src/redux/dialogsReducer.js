@@ -43,6 +43,7 @@ const dialogsReducer = (state = initialState, action) => {
              }
         }
         case UPDATE_NEW_MESSAGE: {
+            console.log(action.newMessage);
             return {
                 ...state,
                 newMessageText: action.newMessage
