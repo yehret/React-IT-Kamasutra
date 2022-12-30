@@ -6,5 +6,35 @@
 }
 
 .descriptionBlock{
-  padding: 10px;
+  margin: 50px 50px 0 50px;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
 }
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.contacts ul {
+  list-style: none;
+}
+
+.contacts li {
+  margin-left: -35px;
+}
+
+.contacts li::before {
+  content: "•";
+  color: #ff4444;
+  border-radius: 4ch;
+  margin-inline-end: 1ch;
+}
+
+.contacts p {
+  margin: 5px;
+}
+
+

@@ -2,10 +2,13 @@ import React from "react";
 import style from './Users.module.css'
 
 import userIcon from '../../assets/images/icon.png'
+import { NavLink } from "react-router-dom";
+import { usersAPI } from "../../api/api";
 
 
 
 const Users = (props) => {
+    // debugger
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
@@ -24,17 +27,35 @@ const Users = (props) => {
     return <div className={style.wrapper}>
                 <div className={style.scroll_page}>
                     {slicedPages.map(p => {
-                        return <button onClick={ (e) => props.onPageChange(p) } className={props.currentPage === p && style.selected}>{p}</button>
+                        return <button onClick={ (e) => props.onPageChange(p) } className={props.currentPage === p ? style.selected : ''}>{p}</button>
                     })}
                 </div>
                 {props.users.map(u => 
                 <div key={u.id} className={style.info_wrapper}>
                     <span className={style.icon_btn}>
-                        <div className={style.icon}><img src={u.photos.small != null ? u.photos.small : u.photos.small = userIcon} alt="icon"/></div>
+                        <div className={style.icon}>
+                            <NavLink to={'/profile/' + u.id}>
+                                <img src={u.photos.small != null ? u.photos.small : u.photos.small = userIcon} alt="icon"/>
+                            </NavLink>
+                        </div>
                         <div className={style.btn}>
-                            {u.isFollowed
-                            ? <button onClick={ () => {props.unfollow(u.id)} }>Followed</button> 
-                            : <button onClick={ () => {props.follow(u.id)} }>Follow</button>}
+                            {u.followed
+                            ? <button onClick={ () => {
+                                usersAPI.unfollow(u.id)
+                                .then(data => {
+                                    if (data.resultCode === 0) {
+                                        props.unfollow(u.id)
+                                    }
+                                })
+                            } }>Followed</button> 
+                            : <button onClick={ () => {
+                                usersAPI.follow(u.id)
+                                .then(data => {
+                                    if (data.resultCode === 0) {
+                                        props.follow(u.id)
+                                    }
+                                })
+                            } }>Follow</button>}
                         </div>
                     </span>
                     <span className={style.user_info}>
