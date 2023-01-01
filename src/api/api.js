@@ -22,14 +22,16 @@ export const usersAPI = {
         .then(response => response.data)
     },
 
-    authMe () {
-        return instance.get(`auth/me`)
-        .then(response => response.data)
-    },
-
     getUserProfile (id) {
         return instance.get(`profile/${id}`)
         .then(response => response.data)
     }
+}
+
+export const authAPI = {
+    authMe () {
+        return instance.get(`auth/me`)
+        .then(response => response.data)
+    },
 }
 

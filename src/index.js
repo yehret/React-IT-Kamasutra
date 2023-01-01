@@ -13,19 +13,15 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = (state) => {
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <Provider store = { store }>
-          <App /*store={store} dispatch={store.dispatch.bind(store)}*/ /*addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}*//>
-        </Provider>
-      </BrowserRouter>
-    </React.StrictMode>
-  );
-}
-
-rerenderEntireTree()
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store = { store }>
+        <App /*store={store} dispatch={store.dispatch.bind(store)}*/ /*addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}*//>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
 
 // rerenderEntireTree(store.getState());
 

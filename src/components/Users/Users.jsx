@@ -3,9 +3,6 @@ import style from './Users.module.css'
 
 import userIcon from '../../assets/images/icon.png'
 import { NavLink } from "react-router-dom";
-import { usersAPI } from "../../api/api";
-
-
 
 const Users = (props) => {
     // debugger
@@ -40,22 +37,11 @@ const Users = (props) => {
                         </div>
                         <div className={style.btn}>
                             {u.followed
-                            ? <button onClick={ () => {
-                                usersAPI.unfollow(u.id)
-                                .then(data => {
-                                    if (data.resultCode === 0) {
-                                        props.unfollow(u.id)
-                                    }
-                                })
-                            } }>Followed</button> 
-                            : <button onClick={ () => {
-                                usersAPI.follow(u.id)
-                                .then(data => {
-                                    if (data.resultCode === 0) {
-                                        props.follow(u.id)
-                                    }
-                                })
-                            } }>Follow</button>}
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)}
+                             onClick={ () => { props.unfollowUser(u.id) } }>Followed</button> 
+
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} 
+                            onClick={ () => { props.followUser(u.id) } }>Follow</button>}
                         </div>
                     </span>
                     <span className={style.user_info}>
