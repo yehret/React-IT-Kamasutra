@@ -4,6 +4,7 @@ import Profile from "./Profile";
 
 import { getProfile } from "../../redux/profileReducer";
 import withRouter from "../common/Preloader/withRouter/withRouter";
+import { compose } from "redux";
 
 class ProfileContainer extends React.Component {
 
@@ -13,7 +14,7 @@ class ProfileContainer extends React.Component {
     this.props.getProfile(userId)
   }
 
-  render () {
+  render () {  
     return (
       <Profile {...this.props} profile = { this.props.profile }/>
     );
@@ -21,7 +22,8 @@ class ProfileContainer extends React.Component {
 };
 
 let mapStateToProps = (state) => ({
-  profile: state.profilePage.profile
+  profile: state.profilePage.profile,
 })
 
-export default connect(mapStateToProps, {getProfile})(withRouter(ProfileContainer));
+export default compose(connect(mapStateToProps, {getProfile}), withRouter)(ProfileContainer)
+

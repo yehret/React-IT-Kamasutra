@@ -2,6 +2,7 @@ import p from "./ProfileInfo.module.css";
 
 import Preloader from '../../common/Preloader/Preloader'
 import defaultIcon from '../../../assets/images/icon.png'
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
 
@@ -22,7 +23,7 @@ const ProfileInfo = (props) => {
       <div className={p.descriptionBlock}>
         <div className={p.contacts}>
           <p>Name: {props.profile.fullName != null ? props.profile.fullName : 'unknown' }</p>
-          <p>Status: {props.profile.aboutMe != null ? props.profile.aboutMe : 'unknown' }</p>
+          <p>Status: {props.profile.aboutMe != null ? <ProfileStatus status={props.profile.aboutMe} /> : 'unknown' }</p>
           <p>Contacts: </p>
           <ul>
             <li>VK: { props.profile.contacts.vk != null ? <a href={props.profile.contacts.vk}>{props.profile.contacts.vk}</a> : 'unknown'} </li>
