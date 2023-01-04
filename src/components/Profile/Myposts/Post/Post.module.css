@@ -1,9 +1,27 @@
 
 .item {
-  color: #999;
+  color: #000;
+  margin: 10px 0 10px 0;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+
+  padding: 10px;
+  box-shadow: 3px 3px 8px rgb(134, 134, 134);
 }
 
 .icon {
   height: 50px;
   width: 50px;
+
+}
+
+.message {
+  padding-left: 15px;
+  order: 0;
+  margin-right: auto;
+}
+
+.likes {
+  align-self: center;
 }

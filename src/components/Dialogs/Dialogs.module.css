@@ -18,16 +18,15 @@
 .send_message{
     display: flex;
     flex-direction: column;
-    width: 300px;
     position: absolute;
     bottom: 0px;
 }
 
 .send_message button {
-    margin-top: 10px;
+    margin-top: 5px;
     /* align-self: center; */
     width: 100px;
-    margin-left: auto;
+    /* margin-left: auto; */
     height: 30px;
 
     border: 2px solid #ccc;

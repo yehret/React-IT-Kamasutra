@@ -14,12 +14,6 @@ const ProfileInfo = (props) => {
 
   return (
     <div className={p.ProfileInfo}>
-      {/* <div className={p.profilebg}>
-        <img
-          src="https://www.feit.com/wp-content/uploads/2017/03/old-new.jpg"
-          alt="main-png"
-        />
-      </div> */}
       <div className={p.descriptionBlock}>
         <div className={p.contacts}>
           <p>Name: {props.profile.fullName != null ? props.profile.fullName : 'unknown' }</p>
@@ -32,7 +26,7 @@ const ProfileInfo = (props) => {
           </ul>
         </div>
         <div className="userImg">
-          <img src={props.profile.photos.large != null ? props.profile.photos.large : defaultIcon} width='300' height='300' alt="ava"/>
+          <img src={props.profile.photos.large != null ? props.profile.photos.large : defaultIcon} width='300' height='300' alt="userPhoto"/>
         </div>
       </div>
     </div>
