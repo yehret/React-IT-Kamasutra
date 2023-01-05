@@ -13,3 +13,12 @@
     align-self: center;
     color: red;
 }
+
+.formSummaryError {
+    margin: 10px;
+    text-align: center;
+    max-width: 50%;
+    border: red 1px solid;
+    padding: 5px;
+    color: red;
+}
