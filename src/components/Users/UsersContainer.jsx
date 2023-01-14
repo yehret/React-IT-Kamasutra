@@ -13,7 +13,8 @@ import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, get
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-      this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+      let {currentPage, pageSize} = this.props
+      this.props.requestUsers(currentPage, pageSize);
       // this.props.toggleIsFetching(true)
 
       // usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then((data) => {
@@ -24,7 +25,8 @@ class UsersContainer extends React.Component {
     }
   
     onPageChange = (pageNumber) => {
-      this.props.requestUsers(pageNumber, this.props.pageSize);
+      let {pageSize} = this.props
+      this.props.requestUsers(pageNumber, pageSize);
     };
   
     render() {
@@ -33,7 +35,7 @@ class UsersContainer extends React.Component {
         { this.props.isFetching ? <Preloader /> : 
         <Users
           followingInProgress={this.props.followingInProgress}
-          totalUsersCount={this.props.totalUsersCount}
+          totalItemsCount={this.props.totalItemsCount}
           pageSize={this.props.pageSize}
           users={this.props.users}
           currentPage={this.props.currentPage}
@@ -64,7 +66,7 @@ let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
         pageSize: getPageSize(state),
-        totalUsersCount: getTotalUsersCount(state),
+        totalItemsCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
         followingInProgress: getFollowingInProgress(state)

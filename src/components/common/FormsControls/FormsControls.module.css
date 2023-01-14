@@ -22,3 +22,10 @@
     padding: 5px;
     color: red;
 }
+.loginbtn {
+    margin: 10px 0 10px 0;
+}
+
+.loginForm :nth-child(3) {
+    display: flex;
+}

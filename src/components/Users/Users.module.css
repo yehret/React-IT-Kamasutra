@@ -41,17 +41,3 @@
 .user_info span:nth-child(2) {
     text-align: right;
 }
-
-.scroll_page button {
-    cursor: pointer;
-    margin: 0 5px 0 5px;
-    border: none;
-    background: none;
-
-    
-}
-
-.selected {
-    font-weight: bold;
-    color: #ff4444;
-}
