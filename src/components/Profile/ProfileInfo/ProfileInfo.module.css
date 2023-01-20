@@ -6,35 +6,56 @@
 }
 
 .descriptionBlock{
-  margin: 50px 50px 0 50px;
+  margin: 20px 0 0 0;
   display: flex;
   justify-content: space-around;
   font-family: 'Roboto', sans-serif;
+  min-height: 450px;
 }
 
-.contacts {
+.userInfo {
   display: flex;
   flex-direction: column;
   align-self: center;
 }
 
-.contacts ul {
-  list-style: none;
+.userName p {
+  margin: 8px 0 0 0;
 }
 
-.contacts li {
-  margin-left: -35px;
+.userImg {
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: center; */
 }
 
-.contacts li::before {
-  content: "•";
-  color: #ff4444;
-  border-radius: 4ch;
-  margin-inline-end: 1ch;
+.userImg input {
+  margin-top: 15px;
 }
 
-.contacts p {
-  margin: 5px;
+.userInfo div {
+  margin: 5px 0 5px 0;
+}
+.userInfo button {
+  width: 100px;
 }
 
+.userContacts {
+  margin-top: 10px;
+}
+
+.userContacts h4 {
+  display: flex;
+  margin: 10px 0 15px 0;
+}
+
+.userContacts p {
+  margin: 0 10px 10px 0;
+}
+
+.userContactItem {
+  display: flex;
+  align-items: center;
+}
 

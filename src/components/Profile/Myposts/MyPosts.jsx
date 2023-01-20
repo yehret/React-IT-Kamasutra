@@ -9,7 +9,7 @@ const Textarea = ElementCreator("textarea")
 
 const MyPosts = React.memo(props => {
 
-  let postsElements = [...props.posts].reverse().map(el => <Post id={el.id} message={el.message}  likeCount={el.likeCount} />)
+  let postsElements = [...props.posts].reverse().map(el => <Post key={el.id} id={el.id} message={el.message}  likeCount={el.likeCount} />)
 
   let AddPost = (values) => {
     props.addPost(values.newPostText)
